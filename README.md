@@ -22,6 +22,16 @@ pnpm nx generate @nx/plugin:generator $GENERATOR_NAME \
   --directory $PLUGIN_NAME/src/generators/$GENERATOR_NAME
 ```
 
+## Executors
+
+To create a new executor run:
+
+```bash
+pnpm nx generate @nx/plugin:executor $EXECUTOR_NAME \
+  --project=$PLUGIN_NAME \
+  --directory $PLUGIN_NAME/src/executors/$EXECUTOR_NAME
+```
+
 ## Generate code
 
 If you happen to use Nx plugins, you can leverage code generators that might come with it.
