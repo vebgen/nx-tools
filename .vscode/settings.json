@@ -1,4 +1,7 @@
 {
-  "cSpell.words": ["vebgen"],
+  "cSpell.words": [
+    "mygen",
+    "vebgen"
+  ],
   "eslint.validate": ["json"]
 }
