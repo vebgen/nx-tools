@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "mygen": {
+      "factory": "./src/generators/mygen/generator",
+      "schema": "./src/generators/mygen/schema.json",
+      "description": "mygen generator"
+    }
+  }
+}
