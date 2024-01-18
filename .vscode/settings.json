@@ -3,6 +3,7 @@
         "devkit",
         "Myexe",
         "mygen",
+        "myorg",
         "vebgen"
     ],
     "eslint.validate": ["json"]
