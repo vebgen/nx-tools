@@ -15,7 +15,8 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
-            "@vebgen/exploration": ["exploration/src/index.ts"]
+            "@vebgen/exploration": ["exploration/src/index.ts"],
+            "@vebgen/rollup": ["rollup/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

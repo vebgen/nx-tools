@@ -1,0 +1,9 @@
+{
+    "executors": {
+        "constructor": {
+            "implementation": "./src/executors/constructor/executor",
+            "schema": "./src/executors/constructor/schema.json",
+            "description": "constructor executor"
+        }
+    }
+}

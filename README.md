@@ -18,7 +18,6 @@ To create a new generator run:
 
 ```bash
 pnpm nx generate @nx/plugin:generator $GENERATOR_NAME \
-  --project=$PLUGIN_NAME \
   --directory $PLUGIN_NAME/src/generators/$GENERATOR_NAME
 ```
 
@@ -28,7 +27,6 @@ To create a new executor run:
 
 ```bash
 pnpm nx generate @nx/plugin:executor $EXECUTOR_NAME \
-  --project=$PLUGIN_NAME \
   --directory $PLUGIN_NAME/src/executors/$EXECUTOR_NAME
 ```
 
