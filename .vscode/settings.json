@@ -4,6 +4,8 @@
         "Myexe",
         "mygen",
         "myorg",
+        "Outfile",
+        "rootmode",
         "vebgen"
     ],
     "eslint.validate": ["json"]
