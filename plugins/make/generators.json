@@ -1,0 +1,19 @@
+{
+    "generators": {
+        "tslibrary": {
+            "factory": "./src/generators/tslibrary/generator",
+            "schema": "./src/generators/tslibrary/schema.json",
+            "description": "tslibrary generator"
+        },
+        "reactlib": {
+            "factory": "./src/generators/reactlib/generator",
+            "schema": "./src/generators/reactlib/schema.json",
+            "description": "reactlib generator"
+        },
+        "reactapp": {
+            "factory": "./src/generators/reactapp/generator",
+            "schema": "./src/generators/reactapp/schema.json",
+            "description": "reactapp generator"
+        }
+    }
+}

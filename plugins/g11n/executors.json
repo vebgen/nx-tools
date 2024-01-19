@@ -1,0 +1,9 @@
+{
+    "executors": {
+        "translate": {
+            "implementation": "./src/executors/translate/executor",
+            "schema": "./src/executors/translate/schema.json",
+            "description": "translate executor"
+        }
+    }
+}
