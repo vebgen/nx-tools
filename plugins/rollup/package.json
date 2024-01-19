@@ -1,5 +1,5 @@
 {
-    "name": "@vebgen/plugins/rollup",
+    "name": "@vebgen/rollup",
     "version": "0.0.1",
     "private": false,
     "description": "A Nx plugin with executors and generators for building applications and libraries using Rollup.",

@@ -1,35 +1,35 @@
 {
-    "name": "rollup",
+    "name": "make",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
-    "sourceRoot": "plugins/rollup/src",
+    "sourceRoot": "plugins/make/src",
     "projectType": "library",
     "targets": {
         "build": {
             "executor": "@nx/js:tsc",
             "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/plugins/rollup",
-                "main": "plugins/rollup/src/index.ts",
-                "tsConfig": "plugins/rollup/tsconfig.lib.json",
+                "outputPath": "dist/plugins/make",
+                "main": "plugins/make/src/index.ts",
+                "tsConfig": "plugins/make/tsconfig.lib.json",
                 "assets": [
-                    "plugins/rollup/*.md",
+                    "plugins/make/*.md",
                     {
-                        "input": "./plugins/rollup/src",
+                        "input": "./plugins/make/src",
                         "glob": "**/!(*.ts)",
                         "output": "./src"
                     },
                     {
-                        "input": "./plugins/rollup/src",
+                        "input": "./plugins/make/src",
                         "glob": "**/*.d.ts",
                         "output": "./src"
                     },
                     {
-                        "input": "./plugins/rollup",
+                        "input": "./plugins/make",
                         "glob": "generators.json",
                         "output": "."
                     },
                     {
-                        "input": "./plugins/rollup",
+                        "input": "./plugins/make",
                         "glob": "executors.json",
                         "output": "."
                     }
@@ -48,7 +48,7 @@
             "executor": "@nx/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
             "options": {
-                "jestConfig": "plugins/rollup/jest.config.ts"
+                "jestConfig": "plugins/make/jest.config.ts"
             }
         }
     },

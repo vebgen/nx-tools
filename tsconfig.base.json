@@ -16,7 +16,8 @@
         "baseUrl": ".",
         "paths": {
             "@vebgen/exploration": ["plugins/exploration/src/index.ts"],
-            "@vebgen/plugins/rollup": ["plugins/rollup/src/index.ts"]
+            "@vebgen/make": ["plugins/make/src/index.ts"],
+            "@vebgen/rollup": ["plugins/rollup/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]
