@@ -27,10 +27,12 @@ export interface AssetGlobPattern {
     ignore?: string[];
 }
 
+
 // export interface Globals {
 //     moduleId: string;
 //     global: string;
 // }
+
 
 /**
  * The options provided by the user in `project.json`.
@@ -112,8 +114,17 @@ export interface ConstructorExecutorSchema {
     watch?: boolean;
 
     /**
-     * Path to a function which takes a rollup config and returns an
-     * updated rollup config.
+     * Config adjusters.
+     *
+     * The value or each member of the array is the path to a module (evaluated
+     * using `resolve`). The default export of each module is a function
+     * with following signature:
+     * ```ts
+     * (
+     *     config: RollupWatchOptions,
+     *     options: NormalizedRollupExecutorOptions
+     * ) => RollupWatchOptions
+     * ```
      */
     rollupConfig?: string | string[];
 

@@ -93,7 +93,7 @@
                     "x-completion-glob": "rollup?(*)@(.js|.ts)"
                 }
             ],
-            "description": "Path to a function which takes a rollup config and returns an updated rollup config."
+            "description": "Path to a module who'se default export is a function which takes a rollup config and (normalized) options and returns an updated rollup config."
         },
         "extractCss": {
             "type": ["boolean", "string"],

@@ -1,11 +1,19 @@
 import { ExecutorContext, readJsonFile } from '@nx/devkit';
-import { ConstructorExecutorSchema } from './schema';
 import {
     calculateProjectBuildableDependencies,
     computeCompilerOptionsPaths,
     DependentBuildableProjectNode,
 } from '@nx/js/src/utils/buildable-libs-utils';
+
+import { createRollupOptions } from './lib/options-massage';
+import { runWatch } from './lib/watch';
+import { runPlain } from './lib/no-watch';
+import { deleteOutputDir } from './lib/fs';
+import { resolveOutfile } from './lib/options-utils';
+import { ConstructorExecutorSchema } from './schema';
 import { normalizeRollupExecutorOptions } from './lib';
+import { ExecutorData } from './lib/common';
+
 
 /**
  * Executor entry point.
@@ -52,18 +60,38 @@ export async function* runConstructorExecutor(
         .filter((d) => d.target.startsWith('npm:'))
         .map((d) => d.target.slice(4));
 
-    const rollupOptions = createRollupOptions(
+    // Put everything in one object.
+    const executorData: ExecutorData = {
         options,
         dependencies,
         context,
         packageJson,
         sourceRoot,
-        npmDeps
-    );
-
-    console.log('Executor ran for Constructor', options);
-    return {
-        success: true,
+        npmDeps,
     };
+
+    // Create the rollup options from raw options and allow each
+    // plugin to adjust the result.
+    const rollupOptions = createRollupOptions(executorData);
+
+    // Get the name for cjs format (undefined if no cjs format).
+    const outfile = resolveOutfile(context, options);
+
+    // Delete output path before bundling
+    if (options.deleteOutputPath) {
+        deleteOutputDir(context.root, options.outputPath);
+    }
+
+    if (options.watch) {
+        return runWatch(
+            outfile, rollupOptions, context, options, packageJson
+        );
+    } else {
+        return runPlain(
+            outfile, rollupOptions, context, options, packageJson
+        );
+    }
 }
+
+
 export default runConstructorExecutor;
