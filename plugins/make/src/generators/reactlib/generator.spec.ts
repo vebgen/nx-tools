@@ -1,19 +1,19 @@
 import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
 import { Tree, readProjectConfiguration } from '@nx/devkit';
 
-import { reactlibGenerator } from './generator';
-import { ReactlibGeneratorSchema } from './schema';
+import { reactLibGenerator } from './generator';
+import { ReactLibGeneratorSchema } from './schema';
 
-describe('reactlib generator', () => {
+describe('react library generator', () => {
     let tree: Tree;
-    const options: ReactlibGeneratorSchema = { name: 'test' };
+    const options: ReactLibGeneratorSchema = { name: 'test' };
 
     beforeEach(() => {
         tree = createTreeWithEmptyWorkspace();
     });
 
     it('should run successfully', async () => {
-        await reactlibGenerator(tree, options);
+        await reactLibGenerator(tree, options);
         const config = readProjectConfiguration(tree, 'test');
         expect(config).toBeDefined();
     });

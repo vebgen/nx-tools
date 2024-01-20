@@ -7,7 +7,7 @@ import {
 import * as path from 'path';
 import { ReactAppGeneratorSchema } from './schema';
 
-export async function reactappGenerator(
+export async function reactAppGenerator(
     tree: Tree,
     options: ReactAppGeneratorSchema
 ) {
@@ -22,4 +22,4 @@ export async function reactappGenerator(
     await formatFiles(tree);
 }
 
-export default reactappGenerator;
+export default reactAppGenerator;

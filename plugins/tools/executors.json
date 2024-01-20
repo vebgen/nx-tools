@@ -1,0 +1,9 @@
+{
+    "executors": {
+        "sync": {
+            "implementation": "./src/executors/sync/executor",
+            "schema": "./src/generators/sync/schema.json",
+            "description": "sync executor"
+        }
+    }
+}

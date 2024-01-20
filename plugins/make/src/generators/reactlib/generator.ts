@@ -7,7 +7,7 @@ import {
 import * as path from 'path';
 import { ReactLibGeneratorSchema } from './schema';
 
-export async function reactlibGenerator(
+export async function reactLibGenerator(
     tree: Tree,
     options: ReactLibGeneratorSchema
 ) {
@@ -22,4 +22,4 @@ export async function reactlibGenerator(
     await formatFiles(tree);
 }
 
-export default reactlibGenerator;
+export default reactLibGenerator;

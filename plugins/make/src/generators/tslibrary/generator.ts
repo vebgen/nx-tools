@@ -22,13 +22,13 @@ import {
     normalizeOptions as normalizeOptionsCommon
 } from '../../lib/common-schema';
 import { TsLibraryGeneratorData } from './data';
-import * as nxToolsPackage from '../../../../../package.json';
+import * as nxToolsPackage from '../../../package.json';
 
 
 /**
  * Generator entry point.
  */
-export async function tslibraryGenerator(
+export async function tsLibraryGenerator(
     tree: Tree,
     options: TsLibraryGeneratorSchema
 ) {
@@ -126,4 +126,4 @@ export function normalizeOptions(options: TsLibraryGeneratorSchema) {
 }
 
 
-export default tslibraryGenerator;
+export default tsLibraryGenerator;

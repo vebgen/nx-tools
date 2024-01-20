@@ -4,6 +4,13 @@
     "sourceRoot": "plugins/rollup/src",
     "projectType": "library",
     "targets": {
+        "sync": {
+            "executor": "@vebgen/nxp-tools:sync",
+            "options": {
+                "version": true,
+                "devDeps": true
+            }
+        },
         "build": {
             "executor": "@nx/js:tsc",
             "outputs": ["{options.outputPath}"],
@@ -34,7 +41,14 @@
                         "output": "."
                     }
                 ]
-            }
+            },
+            "dependsOn": [
+                {
+                    "target": "build",
+                    "projects": "make"
+                },
+                "sync"
+            ]
         },
         "publish": {
             "command": "node tools/scripts/publish.mjs make {args.ver} {args.tag}",

@@ -1,9 +1,16 @@
 {
-    "name": "nxp-tools",
+    "name": "tools",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "plugins/tools/src",
     "projectType": "library",
     "targets": {
+        "sync": {
+            "executor": "@vebgen/nxp-tools:sync",
+            "options": {
+                "version": true,
+                "devDeps": true
+            }
+        },
         "build": {
             "executor": "@nx/js:tsc",
             "outputs": ["{options.outputPath}"],
@@ -37,7 +44,7 @@
             }
         },
         "publish": {
-            "command": "node tools/scripts/publish.mjs nxp-tools {args.ver} {args.tag}",
+            "command": "node tools/scripts/publish.mjs tools {args.ver} {args.tag}",
             "dependsOn": ["build"]
         },
         "lint": {

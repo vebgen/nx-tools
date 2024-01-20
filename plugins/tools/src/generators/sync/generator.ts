@@ -39,27 +39,46 @@ export async function syncGenerator(tree: Tree, options: SyncGeneratorSchema) {
         // Read the project's package.json.
         const packageJson = readJson(tree, filePath);
 
-        // Update the version.
-        if (options.version) {
-            packageJson.version = workspacePackageJson.version;
-        }
-
-        // Update the devDependencies.
-        if (options.devDeps) {
-            if (!packageJson.devDependencies) {
-                packageJson.devDependencies = {};
-            }
-            for (
-                const [name, version] of
-                Object.entries(workspacePackageJson.devDependencies)
-            ) {
-                packageJson.devDependencies[name] = version;
-            }
-        }
+        // Update the file.
+        update(options, workspacePackageJson, packageJson);
 
         // Update the package.json file.
         writeJson(tree, filePath, packageJson);
     });
 }
+
+
+/**
+ * Updates package.json according to the options.
+ *
+ * @param options The user-provided options.
+ * @param workspacePackageJson The workspace package.json.
+ * @param packageJson The project package.json.
+ */
+export function update(
+    options: SyncGeneratorSchema,
+    workspacePackageJson: any,
+    packageJson: any
+) {
+
+    // Update the version.
+    if (options.version) {
+        packageJson.version = workspacePackageJson.version;
+    }
+
+    // Update the devDependencies.
+    if (options.devDeps) {
+        if (!packageJson.devDependencies) {
+            packageJson.devDependencies = {};
+        }
+        for (
+            const [name, version] of
+            Object.entries(workspacePackageJson.devDependencies)
+        ) {
+            packageJson.devDependencies[name] = version;
+        }
+    }
+}
+
 
 export default syncGenerator;
