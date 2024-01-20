@@ -7,7 +7,7 @@ import {
 } from '@nx/devkit';
 import { ConfigurationGeneratorSchema } from '../schema';
 import { getImportPath } from '@nx/js/src/utils/get-import-path';
-import { ConstructorExecutorSchema } from 'rollup/src/executors';
+import { ConstructorExecutorSchema } from '@vebgen/rollup';
 
 /**
  * Reads the target project and makes sure the build target doesn't already

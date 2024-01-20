@@ -1,5 +1,5 @@
 {
-    "name": "@vebgen/make",
+    "name": "@vebgen/nxp-make",
     "version": "0.0.1",
     "dependencies": {
         "@nx/devkit": "17.2.8",

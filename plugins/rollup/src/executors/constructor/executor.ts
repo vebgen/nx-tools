@@ -1,8 +1,6 @@
 import { ExecutorContext, readJsonFile } from '@nx/devkit';
 import {
     calculateProjectBuildableDependencies,
-    computeCompilerOptionsPaths,
-    DependentBuildableProjectNode,
 } from '@nx/js/src/utils/buildable-libs-utils';
 
 import { createRollupOptions } from './lib/options-massage';

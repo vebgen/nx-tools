@@ -1,5 +1,5 @@
 {
-    "name": "@vebgen",
+    "name": "@vebgen/nxp-g11n",
     "version": "0.0.1",
     "dependencies": {
         "@nx/devkit": "17.2.8",

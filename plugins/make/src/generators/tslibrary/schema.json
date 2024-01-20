@@ -1,18 +1,45 @@
 {
     "$schema": "http://json-schema.org/schema",
     "$id": "Tslibrary",
-    "title": "",
+    "title": "Create a new TypeScript library",
+    "description": "Create a TypeScript Library for an Nx workspace.",
     "type": "object",
     "properties": {
         "name": {
             "type": "string",
-            "description": "",
+            "description": "The name of the project",
             "$default": {
                 "$source": "argv",
                 "index": 0
             },
-            "x-prompt": "What name would you like to use?"
+            "x-prompt": "What name would you like to use?",
+            "x-priority": "important"
+        },
+        "description": {
+            "type": "string",
+            "description": "The description of the project",
+            "default": "",
+            "x-prompt": "Describe this project",
+            "x-priority": "important"
+        },
+        "importPath": {
+            "type": "string",
+            "description": "The library name used to import it, like `@myorg/my-awesome-lib`.",
+            "x-priority": "important"
+        },
+        "projectDir": {
+            "type": "string",
+            "description": "The root directory of the project relative to the root of the workspace",
+            "default": "",
+            "x-prompt": "What directory would you like to use?"
+        },
+        "publishable": {
+            "type": "boolean",
+            "description": "Create a publishable project.",
+            "default": true
         }
     },
-    "required": ["name"]
+    "required": [
+        "name"
+    ]
 }
