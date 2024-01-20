@@ -19,7 +19,8 @@
             "@vebgen/exploration": ["plugins/exploration/src/index.ts"],
             "@vebgen/nxp-g11n": ["plugins/g11n/src/index.ts"],
             "@vebgen/nxp-make": ["plugins/make/src/index.ts"],
-            "@vebgen/nxp-rollup": ["plugins/rollup/src/index.ts"]
+            "@vebgen/nxp-rollup": ["plugins/rollup/src/index.ts"],
+            "@vebgen/nxp-tools": ["plugins/tools/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

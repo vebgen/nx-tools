@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "$id": "Sync",
+    "title": "Synchronize the content of the workspace with that of the housed repos",
+    "type": "object",
+    "properties": {
+        "version": {
+            "type": "boolean",
+            "description": "Synchronize versions",
+            "default": true,
+            "x-priority": "important",
+            "x-prompt": "Do you want to copy the version from the workspace to all projects inside the workspace?"
+        },
+        "devDeps": {
+            "type": "boolean",
+            "description": "Synchronize development dependencies",
+            "default": false,
+            "x-priority": "important",
+            "x-prompt": "Do you want to copy development dependencies from the workspace to all projects inside the workspace?"
+        }
+    },
+    "required": []
+}

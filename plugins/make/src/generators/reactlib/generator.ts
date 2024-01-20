@@ -5,11 +5,11 @@ import {
     Tree,
 } from '@nx/devkit';
 import * as path from 'path';
-import { ReactlibGeneratorSchema } from './schema';
+import { ReactLibGeneratorSchema } from './schema';
 
 export async function reactlibGenerator(
     tree: Tree,
-    options: ReactlibGeneratorSchema
+    options: ReactLibGeneratorSchema
 ) {
     const projectRoot = `libs/${options.name}`;
     addProjectConfiguration(tree, options.name, {

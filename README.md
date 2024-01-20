@@ -9,7 +9,12 @@
 To create a new plug-in run:
 
 ```bash
-pnpm nx g @nx/plugin:plugin $PLUGIN_NAME
+pnpm nx generate @nx/plugin:plugin "$PLUGIN_NAME" \
+    --directory="plugins/$PLUGIN_NAME" \
+    --projectNameAndRootFormat="as-provided" \
+    --importPath="@vebgen/nxp-$PLUGIN_NAME" \
+    --publishable=true \
+    --dry-run=true
 ```
 
 ## Generators
@@ -17,8 +22,11 @@ pnpm nx g @nx/plugin:plugin $PLUGIN_NAME
 To create a new generator run:
 
 ```bash
-pnpm nx generate @nx/plugin:generator $GENERATOR_NAME \
-  --directory $PLUGIN_NAME/src/generators/$GENERATOR_NAME
+pnpm nx generate @nx/plugin:generator "$GENERATOR_NAME" \
+    --directory plugins/$PLUGIN_NAME/src/generators/$GENERATOR_NAME \
+    --description="" \
+    --nameAndDirectoryFormat="as-provided" \
+    --dry-run=true
 ```
 
 ## Executors
