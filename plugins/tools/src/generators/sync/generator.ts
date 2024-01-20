@@ -28,6 +28,11 @@ export async function syncGenerator(tree: Tree, options: SyncGeneratorSchema) {
 
     // Go through each project and update its package.json.
     getProjects(tree).forEach((project: ProjectConfiguration) => {
+        // Skip the root project.
+        if (project.root === '.') {
+            return;
+        }
+
         // Determine the path to the project's package.json.
         const filePath = joinPathFragments(project.root, 'package.json')
 
